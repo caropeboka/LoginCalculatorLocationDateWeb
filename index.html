@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>2210191037</title>
+	</head>
+	<body>
+		<h1>Login Kuy</h1>
+		<button onclick="fungsiSaya()">Klik Saya</button>
+ 		<div id="target">
+			<form action="" method="post">
+				<input type="userrname" id="un1" placeholder="Username"/>
+				<input type="password" id="pw1" placeholder="Password"/>
+				<input type="password" id="pw2" placeholder="Konfirmasi Password"/>
+				<input type="submit" value="Cek">
+			</form>	
+			<script type="text/javascript">
+				window.onload = function () {
+					document.getElementById("pw1").onchange = validatePassword;
+					document.getElementById("pw2").onchange = validatePassword;
+				}
+				function validatePassword(){
+					var pass2=document.getElementById("pw2").value;
+					var pass1=document.getElementById("pw1").value;
+					if(pass1!=pass2)
+						document.getElementById("pw2").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+					else
+						document.getElementById("pw2").setCustomValidity('');
+				}
+			</script>
+		</div>
+		<script>
+			function fungsiSaya() {
+            		var x = document.getElementById("target");
+            		if (x.style.display === "none") {
+                		x.style.display = "block";
+            		}else {
+               	 		x.style.display = "none";
+            		}
+        	}
+        	</script>
+		<h1>Kalkulator Sederhana</h1>
+		<form name="ffrom">
+			<pre>
+ 				<input type="text"name="bil1"placeholder="Masukan bilangan 1">
+ 				<input type="text"name="bil2"placeholder="Masukan bilangan 2">
+ 			</pre>
+ 			<input type="button"value="+"onclick="hasil(1)">
+ 			<input type="button"value="-"onclick="hasil(2)">
+ 			<input type="button"value="/"onclick="hasil(3)">
+ 			<input type="button"value="*"onclick="hasil(4)">
+ 			<input type="reset"value="reset">
+		</form>
+		<script language="javascript">
+			function hasil(aritmatika){
+				var bil1=parseFloat(document.ffrom.bil1.value);
+				var bil2=parseFloat(document.ffrom.bil2.value);
+				switch(aritmatika){
+ 					case 1: var jumlah=bil1+bil2;break;
+					case 2: var jumlah=bil1-bil2;break;
+ 					case 3: var jumlah=bil1/bil2;break;
+ 					case 4: var jumlah=bil1*bil2;break;
+				}
+				alert("Hasilnya adalah "+jumlah);
+			}
+		</script>
+		<h1>Kecamatan dan Kelurahan</h1>
+		<script language="javascript">
+			function temp(kecamatan){
+				switch(kecamatan){
+ 					case 1: var kelurahan=["Bangah", "Ganting", "Gedangan", "Gemurung", "Karangbong", "Keboansikep", "Keboananom", "Ketajen", "Kragan", "Punggul", "Sawotratap", "Semambung", "Seruni", "Tebel", "Wedi"];break;
+ 					case 2: var kelurahan=["Banjarkemantran", "Banjarsari", "Buduran", "Damarsi", "Dukuhtengah", "Entalsewu", "Pagerwojo", "Prasung", "Sawohan", "Sidokerto", "Sidomulyo", "Sidokepung", "Siwalanpanji", "Sukorejo", "Wadungasin"];break;
+ 					case 3: var kelurahan=["Balongtani", "Besuki", "Dukuhsari", "Jemirahan", "Keboguyang", "Kedungcangkring", "Kedungpandan", "Kedungrejo", "Kupang", "Panggreh", "Pejarakan", "Permisan", "Semambung", "Tambakkalisogo", "Trompoasri"];break;
+				}
+				alert("Kelurahannya adalah "+kelurahan);
+			}
+		</script>
+		<form name="fffrom">
+ 			<input type="button"value="Gedangan"onclick="temp(1)">
+ 			<input type="button"value="Buduran"onclick="temp(2)">
+ 			<input type="button"value="Jabon"onclick="temp(3)">
+		</form>
+		<h1>Perubahan Format Tanggal</h1>
+		<form name="ffffrom">
+			<pre>
+ 				<input type="text"name="date"placeholder="Masukan dd">
+ 				<input type="text"name="month"placeholder="Masukan mm">
+ 				<input type="text"name="year"placeholder="Masukkan yyyy">
+			</pre>
+ 			<input type="button"value="Hasil"onclick="format(1)">
+ 			<input type="reset"value="reset">
+		</form>
+		<script language="javascript">
+			function format(tanggal){
+				var date=parseInt(document.ffffrom.date.value);
+				var month=parseInt(document.ffffrom.month.value);
+				var year=parseInt(document.ffffrom.year.value);
+ 				if(month==1){ 
+					month="Januari";
+				}else if(month==2){ 
+					month="Februari";
+				}else if(month==3){ 
+					month="Maret";
+				}else if(month==4){ 
+					month="April";
+				}else if(month==5){ 
+					month="Mei";
+				}else if(month==6){ 
+					month="Juni";
+				}else if(month==7){ 
+					month="Juli";
+				}else if(month==8){ 
+					var month="Agustus";
+				}else if(month==9){
+					month="September";
+				}else if(month==10){ 
+					month="Oktober";
+				}else if(month==11){ 
+					month="November";
+				}else if(month==12){ 
+					month="Desember";
+				}else{
+					month="Invalid";
+				}
+				var pesan = "Tanggalnya adalah " + date;
+				pesan = pesan + month;
+    				alert(pesan + year);
+    			}
+		</script>
+	</body>
+</html>
